@@ -8,8 +8,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <%= render 'flashes' -%>
-  <%= yield %>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#">Jobo</a>
+    </div>
+  </nav>
+  <div class="container">
+    <%= render 'flashes' -%>
+    <%= yield %>
+  </div>
   <%= render 'javascript' %>
 </body>
 </html>

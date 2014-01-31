@@ -9,9 +9,12 @@ When(/^I visit the latest jobs url$/) do
 end
 
 Then(/^I should see the latest jobs grouped by categories$/) do
-  within(".#{job.category}") do 
-    page.should have_css(".location", text: 'Santo Domingo')
-    page.should have_css(".position", text: 'Designer')
-    page.should have_css(".company", text: 'Tags and Brackets')
+  @jobs = Jobo::Jobs::ListGroupedByCategories.list Job
+  @jobs.each do |job|
+    within(".#{job.category}") do 
+      page.should have_css(".location", text: 'Santo Domingo')
+      page.should have_css(".position", text: 'Designer')
+      page.should have_css(".company", text: 'Tags and Brackets')
+    end
   end
 end
