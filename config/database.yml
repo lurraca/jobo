@@ -6,6 +6,9 @@ development: &default
   pool: 5
   timeout: 5000
 
-test:
+test: &test
   <<: *default
   database: jobo_test
+
+cucumber:
+  <<: *test
