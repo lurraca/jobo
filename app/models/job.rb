@@ -7,8 +7,4 @@ class Job < ActiveRecord::Base
             category:category)
   end
 
-  def self.all_grouped_by_categories
-    all.grouped_by(&:category)
-  end
-
 end

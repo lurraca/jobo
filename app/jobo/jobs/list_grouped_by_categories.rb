@@ -11,7 +11,7 @@ module Jobo
       end
 
       def list
-        job_repository.all_grouped_by_categories
+        job_repository.all.group_by(&:category)
       end
 
       private

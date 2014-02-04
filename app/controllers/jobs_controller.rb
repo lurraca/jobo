@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
   def latest_active
-    @job = []
+    @jobs = Jobo::Jobs::ListGroupedByCategories.list Job
   end
 end
