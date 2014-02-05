@@ -1,7 +1,7 @@
 <% @jobs.each do |category, jobs| %>
-<div class="panel panel-default <%= category %>">
+<div class="panel panel-default <%= category%>">
   <div class="panel-heading">
-    <h3 class="panel-title">%<= category %></h3>
+    <h3 class="panel-title"><%= category %></h3>
   </div>
   <table class="table">
     <thead>
@@ -12,13 +12,14 @@
       </th>
     </thead>
     <tbody>
-    <% jobs.each do |job| %>
+      <% jobs.each do |job| %>
       <tr>
+        <td></td>
         <td class="location"><%= job.location %></td>
         <td class="position"><%= job.position %></td>
         <td class="company"><%= job.company %></td>
       </tr>
-    <% end %>
+      <% end %>
     </tbody>
   </table>
 </div>
