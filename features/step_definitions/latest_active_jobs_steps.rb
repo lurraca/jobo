@@ -12,7 +12,7 @@ Then(/^I should see the latest jobs grouped by categories$/) do
   @grouped_jobs = Jobo::Jobs::ListGroupedByCategories.list Job
   @grouped_jobs.each do |category, jobs|
     within(".#{category}") do 
-      jobs.each do |job| 
+      jobs.each do |job|
         page.should have_css(".location", text: job.location)
         page.should have_css(".position", text: job.position)
         page.should have_css(".company", text: job.company)

@@ -11,7 +11,7 @@ module Jobo
       end
 
       def list
-        job_repository.all.group_by(&:category)
+        job_repository.order('created_at').group_by(&:category)
       end
 
       private
