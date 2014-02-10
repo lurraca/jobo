@@ -7,6 +7,6 @@ FactoryGirl.define do
     location { Faker::AddressUS.state }
     position { Faker::Job.title }
     company { Faker::Company.name }
-    category "MyString" #TODO: To be set up when categories are defined
+    association :category
   end
 end
