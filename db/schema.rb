@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20140131201144) do
     t.string   "location"
     t.string   "position"
     t.string   "company"
-    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
