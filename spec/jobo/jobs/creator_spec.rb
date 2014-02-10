@@ -1,15 +1,17 @@
 require 'jobs/creator'
+require 'spec_helper'
 
-describe Jobo::Jobs::Creator, '.create_job'  do 
-  let(:job_repository) { double :job_repository } 
-  let(:job_attrs) { 
+
+describe Jobo::Jobs::Creator, '.create_job'  do
+  let(:job_repository) { double :job_repository }
+  let(:job_attrs) {
     {location:'Santo Domingo',
-     position: 'Designer', 
-     company: 'Claro', 
-     category: 'Design'}
+     position: 'Designer',
+     company: 'Claro',
+     category: FactoryGirl.create(:category)}
   }
 
-  it 'creates a new job' do 
+  it 'creates a new job' do
     expect(job_repository).to receive(:create_job).with(
       job_attrs[:location],
       job_attrs[:position],
